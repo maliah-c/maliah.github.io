@@ -50,7 +50,7 @@ df_better = pd.read_sql(f'SELECT organizations.shortname, organizations.name, or
 
 con.close()
 
-st.write("Participants Dataframw")
+st.write("Participants Dataframe")
 st.dataframe(df_best)
 csv_c = df_best.to_csv().encode('utf-8')
 st.download_button(
