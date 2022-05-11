@@ -35,7 +35,7 @@ country_acronyms = {'Belgium': 'BE','Bulgaria': 'BG', 'Czechia': 'CZ', 'Denmark'
 
 selection = st.selectbox('pick', ['BE', 'BG', 'CZ', 'DK', 'DE', 'EE', 'IE','EL','ES','FR','HR','IT','CY','LV','LT','LU','HU','MT','NL','AT','PL','PT','RO','SI','SK','FI','SE'])
 
-country = df_countryList[df_countryList.Country == selection].Acronym.item()
+#country = df_countryList[df_countryList.Country == selection].Acronym.item()
 
 #creating table with data specific to the selected country
 df_new = df_participants[df_participants["country"] == country]
