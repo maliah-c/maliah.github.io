@@ -33,7 +33,7 @@ country_acronyms = {'Belgium': 'BE','Bulgaria': 'BG', 'Czechia': 'CZ', 'Denmark'
 'Latvia':'LV', 'Lithuania': 'LT', 'Luxembourg': 'LU', 'Hungary': 'HU','Malta': 'MT','Netherlands': 'NL', 'Austria': 'AT',
 'Poland': 'PL','Portugal':'PT', 'Romania': 'RO', 'Slovenia': 'SI', 'Slovakia':'SK', 'Finland': 'FI', 'Sweden':'SE'}
 
-selection = st.selectbox('pick', [country_acronyms])
+selection = st.selectbox('pick', ['BE', 'BG', 'CZ', 'DK', 'DE', 'EE', 'IE','EL','ES','FR','HR','IT','CY','LV','LT','LU','HU','MT','NL','AT','PL','PT','RO','SI','SK','FI','SE'])
 
 # Implementation of user selection
 # In the Steamlit implementation ('final.py' it should be used a dropdown menu instead)
