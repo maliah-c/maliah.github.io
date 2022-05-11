@@ -35,13 +35,6 @@ country_acronyms = {'Belgium': 'BE','Bulgaria': 'BG', 'Czechia': 'CZ', 'Denmark'
 
 selection = st.selectbox('pick', ['BE', 'BG', 'CZ', 'DK', 'DE', 'EE', 'IE','EL','ES','FR','HR','IT','CY','LV','LT','LU','HU','MT','NL','AT','PL','PT','RO','SI','SK','FI','SE'])
 
-# Implementation of user selection
-# In the Steamlit implementation ('final.py' it should be used a dropdown menu instead)
-#selection = input('country? ')
-while not selection in list (country_acronyms):
-  selection = input ("country? ")
-sel_country = country_acronyms [selection]
-
 country = df_countryList[df_countryList.Country == selection].Acronym.item()
 
 #creating table with data specific to the selected country
