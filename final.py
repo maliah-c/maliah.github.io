@@ -44,9 +44,16 @@ df_new = pd.merge(df_new, df_pryear, how ="left", on="projectID")
 st.dataframe(df_new)
 
 #create table by country selection, using sort_value to order the table in descending order, using .agg() to split ecContribution into two columns (count, sum)
-
+con = sqlite3.connect("ecsel_database.db")
 df_best = pd.read_sql(f'SELECT country, organizations.shortname, organizations.name, organizations.activityType, organizations.organizationURL, organizations.ecContribution, country  FROM organizations WHERE country="{country}" ORDER BY ecContribution DESC', con)
+
+
+df_better = pd.read_sql(f'SELECT organizations.shortname, organizations.name, organizations.activityType, organizations.projectAcronym, country FROM organizations WHERE country="{country}"', con)
+
+con.close()
+
 st.dataframe(df_best)
+st.dataframe(df_better)
 
 csv_c = df_best.to_csv().encode('utf-8')
 st.download_button(
@@ -54,9 +61,6 @@ st.download_button(
      data=csv_c,
      file_name=f'df.csv',
      mime='text/csv',)
-
-df_better = pd.read_sql(f'SELECT organizations.shortname, organizations.name, organizations.activityType, organizations.projectAcronym, country FROM organizations WHERE country="{country}"', con)
-st.dataframe(df_better)
 
 csv_c2 = df_better.to_csv().encode('utf-8')
 st.download_button(
