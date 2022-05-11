@@ -42,8 +42,6 @@ df_new = df_participants[df_participants["country"] == country]
 df_pryear = df_projects[["projectID", "year"]]
 df_new = pd.merge(df_new, df_pryear, how ="left", on="projectID")
 
-print(df_new)
-
 #create table by country selection, using sort_value to order the table in descending order, using .agg() to split ecContribution into two columns (count, sum)
 con = sqlite3.connect("ecsel_database.db")
 
