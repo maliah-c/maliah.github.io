@@ -14,7 +14,7 @@ import numpy as np
 import streamlit as st
 from PIL import Image
 
-image = Image.open('https://www.google.com/url?sa=i&url=https%3A%2F%2Faeneas-office.org%2Ffunding%2Fkdt%2F&psig=AOvVaw1nlvJOoTt7eBcN5sF4VfeS&ust=1647896445948000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCKj3jOTK1fYCFQAAAAAdAAAAABAI')
+image = Image.open('Logo-KDT-JU.webp')
 st.title("Partner Search App")
 st.image(image)
 
@@ -33,9 +33,11 @@ country_acronyms = {'Belgium': 'BE','Bulgaria': 'BG', 'Czechia': 'CZ', 'Denmark'
 'Latvia':'LV', 'Lithuania': 'LT', 'Luxembourg': 'LU', 'Hungary': 'HU','Malta': 'MT','Netherlands': 'NL', 'Austria': 'AT',
 'Poland': 'PL','Portugal':'PT', 'Romania': 'RO', 'Slovenia': 'SI', 'Slovakia':'SK', 'Finland': 'FI', 'Sweden':'SE'}
 
+selection = st.selectbox('pick', [country_acronyms])
+
 # Implementation of user selection
 # In the Steamlit implementation ('final.py' it should be used a dropdown menu instead)
-selection = input('country? ')
+#selection = input('country? ')
 while not selection in list (country_acronyms):
   selection = input ("country? ")
 sel_country = country_acronyms [selection]
