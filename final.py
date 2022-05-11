@@ -24,7 +24,6 @@ df_countryList = pd.read_sql('SELECT countries.Country, countries.Acronym FROM c
 df_projects = pd.read_sql('SELECT Projects.projectID, Projects.year, Projects.acronym FROM Projects', con)
 df_participants = pd.read_sql('SELECT  organizations.projectID, organizations.country, organizations.shortName, organizations.name, organizations.activityType, organizations.organizationURL, organizations.ecContribution, organizations.projectAcronym FROM organizations ', con)
 #df_participantLiat ()
-print(df_countryList)
 con.close()
 
 # Country acronyms dictionary
@@ -41,7 +40,6 @@ country = st.selectbox('pick', ['BE', 'BG', 'CZ', 'DK', 'DE', 'EE', 'IE','EL','E
 df_new = df_participants[df_participants["country"] == country]
 df_pryear = df_projects[["projectID", "year"]]
 df_new = pd.merge(df_new, df_pryear, how ="left", on="projectID")
-st.dataframe(df_new)
 
 #create table by country selection, using sort_value to order the table in descending order, using .agg() to split ecContribution into two columns (count, sum)
 con = sqlite3.connect("ecsel_database.db")
