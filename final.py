@@ -72,4 +72,5 @@ st.download_button(
 df_counterYear = df_new.groupby("year").sum().ecContribution
 #df_counterYear.plot(kind = "bar", title = f"Total EU contribution in {country}")
 st.bar_chart(df_counterYear)
+st.balloons()
 
